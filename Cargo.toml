@@ -1,0 +1,14 @@
+[package]
+name = "proc-status"
+version = "0.1.0"
+authors = ["dystroy <denys.seguret@gmail.com>"]
+repository = "https://github.com/Canop/proc-status"
+description = "simple access to proc/status info on unix"
+edition = "2018"
+keywords = ["proc", "memory", "process"]
+license = "MIT"
+categories = []
+readme = "README.md"
+
+[dependencies]
+thiserror = "1.0"
