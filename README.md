@@ -1,4 +1,4 @@
-[![MIT][s2]][l2] [![Latest Version][s1]][l1] [![docs][s3]][l3] [![Chat on Miaou][s4]][l4]
+[![MIT][s2]][l2] [![Latest Version][s1]][l0] [![docs][s3]][l3] [![Chat on Miaou][s4]][l4]
 
 [s1]: https://img.shields.io/crates/v/proc-status.svg
 [l1]: https://crates.io/crates/proc-status
@@ -16,7 +16,7 @@
 
 basic process information
 
-The data comes from /proc/<pid>/process and is only
+The data comes from `/proc/<pid>/process` and is only
 available on unix-like systems.
 
 This crate aims at keeping very simple.

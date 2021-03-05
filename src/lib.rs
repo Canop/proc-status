@@ -1,7 +1,7 @@
 //!
 //! basic process information
 //!
-//! The data comes from /proc/<pid>/process and is only
+//! The data comes from `/proc/<pid>/process` and is only
 //! available on unix-like systems.
 //!
 //! This crate aims at keeping very simple.
