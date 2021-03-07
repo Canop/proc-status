@@ -73,14 +73,22 @@ impl ProcStatus {
 
     /// return the current and peak ram usage of the process
     pub fn mem_usage(&self) -> Result<MemUsage, ProcStatusError> {
-        self.value_KiB("VmRSS")
-            .and_then(|current| {
-                self.value_KiB("VmPeak")
-                    .map(|peak| MemUsage {
-                        current: current * 1024, // proc/status data are in KiB
-                        peak: peak * 1024,
-                    })
-            })
+        let mut entries = self.entries();
+        while let Some(entry) = entries.next() {
+            let entry = entry?;
+            if entry.key == "VmPeak" {
+                let peak = entry.in_KiB()? * 1024; // proc/status data are in KiB
+                while let Some(entry) = entries.next() {
+                    let entry = entry?;
+                    if entry.key == "VmRSS" {
+                        let current = entry.in_KiB()? * 1024;
+                        return Ok(MemUsage { current, peak });
+                    }
+                }
+                return Err(ProcStatusError::EntryNotFound("VmRSS".to_string()));
+            }
+        }
+        Err(ProcStatusError::EntryNotFound("VmPeak".to_string()))
     }
 }
 
