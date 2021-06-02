@@ -1,4 +1,4 @@
-[![MIT][s2]][l2] [![Latest Version][s1]][l0] [![docs][s3]][l3] [![Chat on Miaou][s4]][l4]
+[![MIT][s2]][l2] [![Latest Version][s1]][l1] [![docs][s3]][l3] [![Chat on Miaou][s4]][l4]
 
 [s1]: https://img.shields.io/crates/v/proc-status.svg
 [l1]: https://crates.io/crates/proc-status
@@ -21,7 +21,7 @@ available on unix-like systems.
 
 This crate aims at keeping very simple.
 If it doesn't cover your needs, you should probably have a look
-at the much more complete [procfs](https://crates.io/crates/procfs).
+at the much bigger [procfs](https://crates.io/crates/procfs).
 
 # Examples:
 

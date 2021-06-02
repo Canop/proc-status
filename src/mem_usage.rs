@@ -12,13 +12,13 @@ pub struct MemUsage {
     /// estimation of the current physical memory used by the
     /// application, in bytes.
     ///
-    /// Comes from  proc/<id>/status/VmRSS
+    /// Comes from  `/proc/<id>/status/VmRSS`
     pub current: usize,
 
     /// estimation of the peak physical memory used by the
     /// application, in bytes.
     ///
-    /// Comes from  proc/<id>/status/VmHWM
+    /// Comes from  `/proc/<id>/status/VmHWM`
     pub peak: usize,
 
 }
